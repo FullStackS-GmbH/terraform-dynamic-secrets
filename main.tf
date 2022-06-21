@@ -39,23 +39,24 @@ IAM
 
 
 
-# resource "vault_aws_secret_backend_role" "s3_admin_role" {
-#   backend         = vault_aws_secret_backend.aws_secret.path
-#   name            = "s3-admin-role"
-#   credential_type = "iam_user"
 
-#   # IAM Role mit Vollzugriff auf S3
-#   policy_document = <<IAM
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Sid": "Stmt1426528957000",
-#       "Effect": "Allow",
-#       "Action": ["s3:*"],
-#       "Resource": ["*"]
-#     }
-#   ]
-# }
-# IAM
-# }
+resource "vault_aws_secret_backend_role" "s3_admin_role" {
+  backend         = vault_aws_secret_backend.aws_secret.path
+  name            = "s3-admin-role"
+  credential_type = "iam_user"
+
+  # IAM Role mit Vollzugriff auf S3
+  policy_document = <<IAM
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1426528957000",
+      "Effect": "Allow",
+      "Action": ["s3:*"],
+      "Resource": ["*"]
+    }
+  ]
+}
+IAM
+}
