@@ -37,6 +37,8 @@ resource "vault_aws_secret_backend_role" "ec2_admin_role" {
 IAM
 }
 
+
+
 # resource "vault_aws_secret_backend_role" "s3_admin_role" {
 #   backend         = vault_aws_secret_backend.aws_secret.path
 #   name            = "s3-admin-role"
