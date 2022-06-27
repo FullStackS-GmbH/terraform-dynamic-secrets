@@ -20,13 +20,13 @@ Dynamische Zugangsdaten ermöglichen sehr einfach einen hohen Grad an Sicherheit
 Zusätzlich können diese mit Policies und Identiy Providern sehr granular gesteuert werden.
 
 
-Dieses Mockup basiert auf HashiCorp Terraform, dem de-dacto Standard für Infrastructure as Code
+Dieses Mockup basiert auf HashiCorp Terraform, dem de-facto Standard für Infrastructure as Code
 
 
 ## Nutzung Terraform Code
 
 Sämtliche Variablen können entweder in einer `terraform.tfvars` oder aber als Environment Variable definiert werden.
-Letzeres nutzen wir in diesem Mockup, da wir keine Secrets in Dateien speichern wollen.
+(In diesem Mockup nutzen wir HashiCorp Terraform Cloud und den integrierten Vault für sensible Variablen).
 
 ```
 export TF_VAR_aws_access_key=<KEY>
